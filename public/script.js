@@ -1,4 +1,12 @@
-const socket = io();
+const socket = io({
+  transports: ['websocket', 'polling'],
+  upgrade: true,
+  rememberUpgrade: true,
+  reconnection: true,
+  reconnectionAttempts: 10,
+  reconnectionDelay: 1000,
+  timeout: 20000
+});
 
 // Состояние
 let currentPlayer = {
