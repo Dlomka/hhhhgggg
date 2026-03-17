@@ -8,6 +8,8 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// ДОБАВЬ ЭТО:
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
